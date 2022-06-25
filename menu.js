@@ -52,7 +52,8 @@ let pizza = {
 
 //CODE HERE
 
-pizza.popularity = 70
+let pizzaPop = pizza.popularity
+console.log(pizzaPop)
 
 /*
     Second, log the second tag in your pizza's
@@ -62,7 +63,8 @@ pizza.popularity = 70
 */
 
 //CODE HERE
-pizza.tags = 'easy'
+let secPizzaTag = pizza.tags[1]
+console.log(secPizzaTag)
 
 /*
     Third, destructure the price off of the
@@ -73,8 +75,8 @@ pizza.tags = 'easy'
 
 //CODE HERE
 
-pizza.price = 1150
-console.log(pizza)
+let {price} = pizza
+console.log(price)
 /*
     Fourth, and last, destructure the category
     property.
@@ -84,8 +86,8 @@ console.log(pizza)
 
 //CODE HERE
 
-const {category: bestThing} = pizza
-console.log(bestThing)
+let {category} = pizza
+console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -101,13 +103,43 @@ console.log(bestThing)
 
 //CODE HERE
 
-let foodArr = {
+let foodArr = [
+    {
     name:'apple',
     price: 2,
-    popularity: 85,
-    rating: 90,
-    tags: 'healthy'
+    popularity: 8.5,
+    rating: 9,
+    tags: ['family', 'kids', 'healthy']
+    },
+{
+    name:'sardines',
+    price: 5,
+    popularity: 4.9,
+    rating: 3,
+    tags: ['family', 'kids', 'popular']
+},
+{
+    name:'sandwich',
+    price: 5.59,
+    popularity: 9,
+    rating: 10,
+    tags: ['family', 'kids', 'heavenly']
+},
+{
+    name:'carrot',
+    price: 3.99,
+    popularity: 6,
+    rating: 7,
+    tags: ['family', 'kids', 'healthy']
+},
+{
+    name: 'sushi',
+    price: 8.99,
+    popularity: 10,
+    rating: 10,
+    tags: ['family', 'kids', 'amazing']
 }
+]
 
 //////////////////PROBLEM 4////////////////////
 /* 
@@ -173,6 +205,16 @@ console.log(filteredFood)
 
 //CODE HERE
 
+const filterByProperty = function(property, number, type) {
+    const filteredArr = foodArr.filter((element) => {
+        if(type === 'above') {
+            return element[property] > number
+        } else if(type === 'below') {
+            return element[property] < number
+        }
+    })
+    return filteredArr
+}
 
 
 /*
@@ -183,3 +225,5 @@ console.log(filteredFood)
 */
 
 //CODE HERE
+
+console.log(filterByProperty('popularity', 4, 'below'))

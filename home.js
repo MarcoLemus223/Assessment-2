@@ -96,6 +96,15 @@ canWeDeliver(84606)
 
 // CODE HERE
 
+function canWeDeliverTwo(zipCode) {
+    for(let i = 0; i < deliveryAreaZipCodes.length; i++){
+        if(deliveryAreaZipCodes[i] === zipCode) {
+            return "You're in our delivery zone"
+        }
+    }
+return "You're not in our delivery zone"
+}
+console.log(canWeDeliverTwo(99999))
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -132,7 +141,8 @@ const deals = [
 
 //CODE HERE
 
-title.replace('10% Off')
+deals[0].title = deals[0].title.replace('15','10')
+console.log(deals)
 
 /*
     The restaurant is going to continue its
@@ -149,5 +159,4 @@ title.replace('10% Off')
 
 //CODE HERE
 
-desc.replace('April')
-console.log(deals)
+deals[1].desc = deals[1].desc.replace('March', 'April').trim()
